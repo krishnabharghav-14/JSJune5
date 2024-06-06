@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Onclick</h3>
+    <h1>Click here...</h1><br><br>
+
+    <h3>Mouseover and Mouseout</h3>
+    <div style="width: 100px;">
+        <img id="2" src="https://m.media-amazon.com/images/I/51MooKtvZHL._SX679_.jpg" width="100" height="100" alt="">
+        <img id="3" src="https://m.media-amazon.com/images/I/71SnsDeMPKL._SX679_.jpg" width="100" height="100" alt="">
+    </div>
+    <div>
+        <img id="1" src="https://m.media-amazon.com/images/I/51klz5w3beL._SX679_.jpg" width="200" height="200" style="border: 2px solid red;" alt="">
+    </div><br><br>
+    
+    
+    <h3>Checked</h3>
+    <div style="width: 100px;height: 20px;">
+        <form action="">
+            <input id="chat" type="radio" name="item">
+            <label for="chat">chat</label><br>
+            <input id="Panipuri" type="radio" name="item">
+            <label for="Panipuri">Pani puri</label><br>
+            <input id="Ragda" type="radio" name="item">
+            <label for="Ragda">Ragda</label><br>
+        </form>
+    </div>
+    <div style="width: 80px;height: 70px;">
+        <img id="item" src="" alt="Umai" style="width: 80px;height: 70px;">
+    </div>
+    <script>
+        // Click...
+        function hello(){
+            count++;
+            if(count%2!=0){
+                h1[0].style.color="red"
+            } 
+            else{
+                h1[0].style.color="black"
+            }
+        }
+        count=0;
+        var h1=document.getElementsByTagName("h1");
+        h1[0].addEventListener("click",hello)
+        // hover...
+        var id1=document.getElementById("1")
+        var id2=document.getElementById("2")
+        var id3=document.getElementById("3")
+        id2.addEventListener("mouseover",fn1);
+        id2.addEventListener("mouseout",fn3);
+        id3.addEventListener("mouseover",fn2);
+        id3.addEventListener("mouseout",fn4);
+        function fn1(){
+            id1.setAttribute("src","https://m.media-amazon.com/images/I/51MooKtvZHL._SX679_.jpg")
+        }
+        function fn2(){
+            id1.setAttribute("src","https://m.media-amazon.com/images/I/71SnsDeMPKL._SX679_.jpg")
+        }
+        function fn3(){
+            id1.setAttribute("src","https://m.media-amazon.com/images/I/51klz5w3beL._SX679_.jpg")
+        }
+        function fn4(){
+            id1.setAttribute("src","https://m.media-amazon.com/images/I/51klz5w3beL._SX679_.jpg")
+        } 
+        
+        
+
+        //checked...
+        var a=document.getElementById("chat");
+        a.addEventListener("click",chat);
+        var item=document.getElementById("item");
+
+        var b=document.getElementById("Panipuri");
+        b.addEventListener("click",Panipuri);
+        var item=document.getElementById("item");
+
+        var c=document.getElementById("Ragda");
+        c.addEventListener("click",Ragda);
+        var item=document.getElementById("item");
+
+        function chat(){
+            item.setAttribute("src","https://www.cookwithmanali.com/wp-content/uploads/2019/09/Samosa-Chaat.jpg")
+        }
+        function Panipuri(){
+            item.setAttribute("src","https://static.toiimg.com/thumb/61048461.cms?imgsize=1981854&width=800&height=800")
+        }
+        function Ragda(){
+            item.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNrIdzCODShcWfslqrK3593gcO0gWfy_gA1w&s")
+        }
+
+
+
+    </script>
+</body>
+</html>
